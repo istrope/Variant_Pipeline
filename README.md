@@ -21,6 +21,7 @@ This pipeline utilizes snakemake for workflow management and provided is usage a
 Bam files can be provided instead of fastq to skip mapping step</p>
 ### Specify File Locations
 optional if installed to PATH: gatk,bwa,samtools,bcftools
+
 ```
 python config.py \
    --fastq_dir /path/to/fastqs \
