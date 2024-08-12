@@ -29,7 +29,8 @@ python config.py --ref hg38.fasta \
 --bcfools bcftools/ \
 --samtools samtools/ 
 ```
-
+### Run Snakemake Command
+Contains automatic log file generation and error handling
 ```
 snakemake -s variant_pipeline.smk --config variant_config.
 ```
