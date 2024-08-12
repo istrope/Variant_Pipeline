@@ -36,7 +36,7 @@ python config.py \
     --threads num_threads
 
 ```
-### Run Snakemake Command
+## Run Snakemake Command
 Contains automatic log file generation and error handling
 ```
 snakemake -s variant_pipeline.smk
