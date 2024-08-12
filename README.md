@@ -27,7 +27,8 @@ The following are optional if installed to system
 2. samtools
 3. bcftools
 <br>
-You Must Specify the following
+
+You Must Specify the following:
 1. fastq_dir
 2. gatk executable
 3. varscan jar file
