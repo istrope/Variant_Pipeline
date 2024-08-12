@@ -27,7 +27,9 @@ def main():
     parser.add_argument("--varscan", help="Path to VarScan JAR file.", required=True)
     parser.add_argument("--reference_fasta", help="Path to reference FASTA file.", required=True)
     parser.add_argument("--funcotator_db", help="Path to Funcotator data sources.", required=True)
+    parser.add_argument("--fastq_dir",help="Path to directory containing fastq files",required=True)
     parser.add_argument("--output", help="Output YAML file name.", default="config.yaml")
+    parser.add_argument('--threads',help='number of threads for multi-threaded processes',default=4)
 
     args = parser.parse_args()
 
@@ -44,6 +46,8 @@ def main():
     # Add reference fasta and funcotator db
     config["reference_fasta"] = args.reference_fasta
     config["funcotator_db"] = args.funcotator_db
+    config['threads'] = args.threads
+    config['fastq_dir']=args.fastq_dir
 
     # Write the config dictionary to a YAML file
     with open(args.output, "w") as yaml_file:
