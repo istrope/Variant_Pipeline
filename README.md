@@ -47,10 +47,10 @@ python config.py \
     --funcotator_db /path/to/funcotator_dataSources.v1.7.20200521s \
     --output config.yaml \
     --threads num_threads
-
 ```
 ## Run Snakemake Command
 Contains automatic log file generation and error handling
+
 ```
 snakemake -s variant_pipeline.smk
 ```
