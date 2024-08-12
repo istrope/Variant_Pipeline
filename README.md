@@ -21,17 +21,19 @@ This pipeline utilizes snakemake for workflow management and provided is usage a
 ### Specify File Locations
 optional if installed to PATH: gatk,bwa,samtools,bcftools
 ```
-python config.py --ref hg38.fasta \
---ref-version hg38 \
---funcotator-db funcotator_dataSources.v1.7.20200521s \
---threads 8 \
---varscan VarScan.v2.3.9.jar \
---gatk gatk-4.3.0.0/ \
---bcfools bcftools/ \
---samtools samtools/ 
+python config.py \
+    --bwa /path/to/bwa \
+    --samtools /path/to/samtools \
+    --bcftools /path/to/bcftools \
+    --gatk /path/to/gatk \
+    --varscan /path/to/varscan.jar \
+    --reference_fasta /path/to/Homo_sapiens_assembly38.fasta \
+    --funcotator_db /path/to/funcotator_dataSources.v1.7.20200521s \
+    --output config.yaml
+
 ```
 ### Run Snakemake Command
 Contains automatic log file generation and error handling
 ```
-snakemake -s variant_pipeline.smk --config variant_config.
+snakemake -s variant_pipeline.smk --config config.yaml
 ```
