@@ -34,7 +34,8 @@ You Must Specify the following
 4. reference fasta file
 5. funcotator database location
 <br>
-You can configure the number of threads available with the --threads parameter
+You can configure the number of threads available with the --threads parameter <br>
+
 ```
 python config.py \
    --fastq_dir /path/to/fastqs \
