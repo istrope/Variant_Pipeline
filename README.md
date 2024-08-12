@@ -16,12 +16,14 @@ This workflow requires the folling before usage
 6. references + databases (reference assembly, funcotater database, gnomAD germline AF only file)
    
 ## Snakemake
-This pipeline utilizes snakemake for workflow management and provided is usage analysis
-
+This pipeline utilizes snakemake for workflow management and provided is usage analysis <br>
+<p> This pipeline takes all files in a fastq directory, maps the files, call variants with two methods and lastly will annotate the overlapping calls. <br>
+Bam files can be provided instead of fastq to skip mapping step</p>
 ### Specify File Locations
 optional if installed to PATH: gatk,bwa,samtools,bcftools
 ```
 python config.py \
+   --fastq_dir /path/to/fastqs \
     --bwa /path/to/bwa \
     --samtools /path/to/samtools \
     --bcftools /path/to/bcftools \
@@ -29,11 +31,12 @@ python config.py \
     --varscan /path/to/varscan.jar \
     --reference_fasta /path/to/Homo_sapiens_assembly38.fasta \
     --funcotator_db /path/to/funcotator_dataSources.v1.7.20200521s \
-    --output config.yaml
+    --output config.yaml \
+    --threads num_threads
 
 ```
 ### Run Snakemake Command
 Contains automatic log file generation and error handling
 ```
-snakemake -s variant_pipeline.smk --config config.yaml
+snakemake -s variant_pipeline.smk
 ```
