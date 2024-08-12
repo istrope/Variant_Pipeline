@@ -24,6 +24,7 @@ optional if installed to PATH: gatk,bwa,samtools,bcftools
 python config.py --ref hg38.fasta \
 --ref-version hg38 \
 --funcotator-db funcotator_dataSources.v1.7.20200521s \
+--threads 8 \
 --varscan VarScan.v2.3.9.jar \
 --gatk gatk-4.3.0.0/ \
 --bcfools bcftools/ \
